@@ -1,0 +1,12 @@
+#!/bin/bash
+
+TIME=$(date "+%Y-%m-%d %H:%M:%S")
+ID=$1
+NAME=$(grep $ID name.list 2>/dev/null | cut -d' ' -f2)
+
+if [[ "" == "$NAME" ]]
+then
+    NAME="unknown"
+fi
+
+echo "[$TIME] hello $NAME"
